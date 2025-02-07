@@ -6,7 +6,7 @@ import lombok.*;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder
-public class user {
+public class User {
     @Id
     private String id;
     private String firstName;
