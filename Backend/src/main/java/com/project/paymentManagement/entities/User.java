@@ -14,7 +14,7 @@ public class User {
     private String lastName;
     @Column(unique = true)
     private String code;
-    private String programmeId;
+    private String programId;
     private String photo;
 
 }
