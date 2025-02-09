@@ -13,6 +13,6 @@ public class Payment {
     private PaymentType type;
     private PaymentStatus status;
     @ManyToOne
-    private User user; //payment belong to a user
+    private Client client; //payment belong to a user
 
 }

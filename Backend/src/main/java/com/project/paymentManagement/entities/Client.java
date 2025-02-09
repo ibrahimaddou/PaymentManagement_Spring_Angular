@@ -10,8 +10,8 @@ import lombok.Builder;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder
-@Table(name = "users")  // Renommage de la table pour éviter les conflits le mot User réservé en sql /h2
-public class User {
+
+public class Client {
     @Id
     private String id;
     private String firstName;

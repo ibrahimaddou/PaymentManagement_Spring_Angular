@@ -1,11 +1,12 @@
 package com.project.paymentManagement.Web;
 
+import com.project.paymentManagement.Repository.ClientRepository;
 import com.project.paymentManagement.Repository.PaymentRepository;
-import com.project.paymentManagement.Repository.UserRepository;
+import com.project.paymentManagement.Repository.ClientRepository;
 import com.project.paymentManagement.entities.Payment;
 import com.project.paymentManagement.entities.PaymentStatus;
 import com.project.paymentManagement.entities.PaymentType;
-import com.project.paymentManagement.entities.User;
+import com.project.paymentManagement.entities.Client;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,26 +16,26 @@ import java.util.List;
 
 @RestController
 public class PaymentRestController {
-    private UserRepository userRepository;
+    private ClientRepository clientRepository;
     private PaymentRepository paymentRepository;
 
-    public PaymentRestController(PaymentRepository paymentRepository) {
-        this.userRepository = userRepository;
+    public PaymentRestController(PaymentRepository paymentRepository,ClientRepository  clientRepository) {
+        this.clientRepository = clientRepository;
         this.paymentRepository = paymentRepository;
     }
     @GetMapping(path ="/payments")
     public List<Payment> allPayments(){
         return paymentRepository.findAll();
     }
-    @GetMapping(path ="/users/{code}/payments")
-    public List<Payment> paymentsByUser(@PathVariable String code){
-        return paymentRepository.findByUserCode(code);
+    @GetMapping(path ="/clients/{code}/payments")
+    public List<Payment> paymentsByClient(@PathVariable String code){
+        return paymentRepository.findByClientCode(code);
     }
-    @GetMapping(path ="/payments/ByStatus")
+    @GetMapping(path ="/payments/byStatus")
     public List<Payment> paymentsByStatus(@RequestParam PaymentStatus status){
         return paymentRepository.findByStatus(status);
     }
-    @GetMapping(path ="/payments/ByType")
+    @GetMapping(path ="/payments/byType")
     public List<Payment> paymentsByType(@RequestParam PaymentType type){
         return paymentRepository.findByType(type);
     }
@@ -43,17 +44,17 @@ public class PaymentRestController {
     public Payment getPaymentById(@PathVariable Long id){
         return paymentRepository.findById(id).get();
     }
-    @GetMapping(path="/users")
-    public List<User> allUsers(){
-        return userRepository.findAll();
+    @GetMapping(path="/clients")
+    public List<Client> allClients(){
+        return clientRepository.findAll();
     }
-    @GetMapping(path="/users/{code}")
-    public User getUserByCode(@PathVariable String code){
-        return userRepository.findByCode(code);
+    @GetMapping(path="/clients/{code}")
+    public Client getClientByCode(@PathVariable String code){
+        return clientRepository.findByCode(code);
     }
-    @GetMapping("/usersByProgramId")
-    public List<User> getUsersByProgramId(@RequestParam String programId){
-        return userRepository.findByProgramId(programId);
+    @GetMapping("/clientsByProgramId")
+    public List<Client> getClientsByProgramId(@RequestParam String programId){
+        return clientRepository.findByProgramId(programId);
     }
 
 }
