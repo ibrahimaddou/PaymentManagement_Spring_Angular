@@ -18,7 +18,7 @@ import java.util.UUID;
 @SpringBootApplication
 public class PaymentManagementApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		SpringApplication.run(PaymentManagementApplication.class, args);
 	}
 

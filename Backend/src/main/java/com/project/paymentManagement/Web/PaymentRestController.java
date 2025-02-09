@@ -30,11 +30,11 @@ public class PaymentRestController {
     public List<Payment> paymentsByUser(@PathVariable String code){
         return paymentRepository.findByUserCode(code);
     }
-    @GetMapping(path ="/payments")
+    @GetMapping(path ="/payments/ByStatus")
     public List<Payment> paymentsByStatus(@RequestParam PaymentStatus status){
         return paymentRepository.findByStatus(status);
     }
-    @GetMapping(path ="/payments")
+    @GetMapping(path ="/payments/ByType")
     public List<Payment> paymentsByType(@RequestParam PaymentType type){
         return paymentRepository.findByType(type);
     }
