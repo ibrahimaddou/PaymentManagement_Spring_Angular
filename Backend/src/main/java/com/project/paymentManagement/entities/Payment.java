@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-@Entity @AllArgsConstructor @Getter @Setter @ToString @Builder
+@Entity @NoArgsConstructor@AllArgsConstructor @Getter @Setter @ToString @Builder
 public class Payment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,7 +12,7 @@ public class Payment {
     private double amount;
     private PaymentType type;
     private PaymentStatus status;
-    @ManyToMany
+    @ManyToOne
     private User user; //payment belong to a user
 
 }
