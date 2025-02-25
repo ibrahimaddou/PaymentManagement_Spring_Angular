@@ -7,10 +7,7 @@ import com.project.paymentManagement.entities.Payment;
 import com.project.paymentManagement.entities.PaymentStatus;
 import com.project.paymentManagement.entities.PaymentType;
 import com.project.paymentManagement.entities.Client;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -55,6 +52,12 @@ public class PaymentRestController {
     @GetMapping("/clientsByProgramId")
     public List<Client> getClientsByProgramId(@RequestParam String programId){
         return clientRepository.findByProgramId(programId);
+    }
+    @PutMapping("/payments/{id}") //HTTP PUT requests is to modify a ressource
+    public Payment updatePaymentStatus(@RequestParam PaymentStatus status, @PathVariable Long id){
+        Payment payment = paymentRepository.findById(id).get();
+        payment.setStatus(status);
+        return paymentRepository.save(payment);
     }
 
 }
