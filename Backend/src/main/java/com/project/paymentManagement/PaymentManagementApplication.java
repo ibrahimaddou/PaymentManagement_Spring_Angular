@@ -3,6 +3,7 @@ package com.project.paymentManagement;
 import com.project.paymentManagement.Repository.ClientRepository;
 import com.project.paymentManagement.Repository.PaymentRepository;
 import com.project.paymentManagement.entities.Payment;
+import com.project.paymentManagement.entities.PaymentStatus;
 import com.project.paymentManagement.entities.PaymentType;
 import com.project.paymentManagement.entities.Client;
 import org.springframework.boot.CommandLineRunner;
@@ -32,6 +33,7 @@ public class PaymentManagementApplication {
 					.firstName("soso").code("124").programId("TOO")
 					.build());
 			PaymentType[] paymentTypes = PaymentType.values();//une liste des types enum
+			PaymentStatus[] paymentStatuses = PaymentStatus.values();
 			Random random =new Random();
 			clientRepository.findAll().forEach(us->{
 				for (int i = 0 ; i<2;i++){
@@ -39,6 +41,7 @@ public class PaymentManagementApplication {
 					Payment payment = Payment.builder()
 							.amount(100+(int)(Math.random()+2000))
 							.type(paymentTypes[j])
+							.status(paymentStatuses[j])
 							.date(LocalDate.now())
 							.client(us)
 							.build();
