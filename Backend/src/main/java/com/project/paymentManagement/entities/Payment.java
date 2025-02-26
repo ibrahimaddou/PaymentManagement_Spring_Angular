@@ -14,5 +14,6 @@ public class Payment {
     private PaymentStatus status;
     @ManyToOne
     private Client client; //payment belong to a user
+    private String file;
 
 }
