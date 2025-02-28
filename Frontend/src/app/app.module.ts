@@ -16,7 +16,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoadClientsComponent } from './load-clients/load-clients.component';
 import { LoadPaymentsComponent } from './load-payments/load-payments.component';
 import { LoginComponent } from './login/login.component';
-import { StudentsComponent } from './students/students.component';
 import { ClientsComponent } from './clients/clients.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -31,7 +30,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoadClientsComponent,
     LoadPaymentsComponent,
     LoginComponent,
-    StudentsComponent,
     ClientsComponent,
     PaymentsComponent,
     DashboardComponent
