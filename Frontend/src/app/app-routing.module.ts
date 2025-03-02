@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientsComponent } from './clients/clients.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AuthorizationGuard } from './guards/authorization.guard';
 
 const routes: Routes = [
   {path : "", component : LoginComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
     children :[
     {path : "home", component : HomeComponent},
     {path : "profile", component : ProfileComponent},
-    {path : "loadClients", component : LoadClientsComponent},
+    {path : "loadClients", component : LoadClientsComponent,
+      canActivate :[AuthorizationGuard],data : {roles :['ADMIN']}
+    },
     {path : "loadPayments", component : LoadPaymentsComponent},
     {path : "dashboard", component : DashboardComponent},
     {path : "clients", component : ClientsComponent},
