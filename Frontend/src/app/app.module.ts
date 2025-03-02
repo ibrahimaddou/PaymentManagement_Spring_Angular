@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
