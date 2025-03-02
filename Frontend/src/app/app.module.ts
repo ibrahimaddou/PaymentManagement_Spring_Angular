@@ -26,7 +26,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import {MatTableModule} from '@angular/material/table';
     LoginComponent,
     ClientsComponent,
     PaymentsComponent,
-    DashboardComponent
+    DashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     provideAnimationsAsync(),
