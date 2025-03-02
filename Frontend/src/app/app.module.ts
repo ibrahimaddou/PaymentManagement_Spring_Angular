@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     provideAnimationsAsync(),

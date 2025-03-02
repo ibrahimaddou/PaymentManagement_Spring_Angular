@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin("*")
 public class PaymentRestController {
     private ClientRepository clientRepository;
     private PaymentRepository paymentRepository;

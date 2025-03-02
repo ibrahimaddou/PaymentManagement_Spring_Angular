@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-payments',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentsComponent implements OnInit {
    public payments : any;
+   public dataSource :any;
+   public displayedColumns : string[] = ['id','date','amount','type','status','firstname'];
   constructor(private http : HttpClient){
     
   }
@@ -15,7 +18,8 @@ export class PaymentsComponent implements OnInit {
     this.http.get("http://localhost:8021/payments")
     .subscribe({
       next : data =>{
-        this.payments = data;
+        this.payments = data; //getting data
+        this.dataSource = new MatTableDataSource(this.payments);
       },
       error : err =>{
         console.log(err);
