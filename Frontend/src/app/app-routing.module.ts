@@ -10,9 +10,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientsComponent } from './clients/clients.component';
 
 const routes: Routes = [
+  {path : "", component : LoginComponent},
+  {path : "login", component : LoginComponent},
   {path : "home", component : HomeComponent},
   {path : "profile", component : ProfileComponent},
-  {path : "login", component : LoginComponent},
   {path : "loadClients", component : LoadClientsComponent},
   {path : "loadPayments", component : LoadPaymentsComponent},
   {path : "dashboard", component : DashboardComponent},
