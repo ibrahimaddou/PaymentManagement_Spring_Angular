@@ -3,33 +3,35 @@
         <mat-icon>menu</mat-icon>
     </button>  
     <span style="flex:auto"></span>
-    <button mat-button routerLink="/home">Home</button>
-    <button mat-button routerLink="/profile">Profile</button>
+    <button mat-button routerLink="/admin/home">Home</button>
+    <button mat-button routerLink="/admin/profile">Profile</button>
     <button mat-button [mat-menu-trigger-for]="importMenu" >
         <mat-icon iconPositionEnd>keyboard_arrow_down</mat-icon>
         Import
     </button>
     <mat-menu #importMenu>
-        <button mat-menu-item routerLink="/loadClients">Load Clients</button>
-        <button mat-menu-item routerLink="/loadPayments">Load Payments</button>
+        <button mat-menu-item routerLink="/admin/loadClients">Load Clients</button>
+        <button mat-menu-item routerLink="/admin/loadPayments">Load Payments</button>
     </mat-menu>
-    <button mat-raised-button color="accent" routerLink="/login">Logout</button>
+    <button mat-raised-button color="accent" routerLink="/admin/login">
+        Logout
+    </button>
 
 </mat-toolbar >
 <mat-drawer-container>
     <mat-drawer #myDrawer opened="true" mode="side" position="start">
         <mat-list>
             <mat-list-item>
-                <button mat-button routerLink="/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
+                <button mat-button routerLink="/admin/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
             </mat-list-item>
             <mat-list-item>
-                <button mat-button routerLink="/clients">
+                <button mat-button routerLink="/admin/clients">
                     <mat-icon>account_box</mat-icon>
                     Clients
                 </button>
             </mat-list-item>
             <mat-list-item>
-                <button mat-button routerLink="/payments">
+                <button mat-button routerLink="/admin/payments">
                     <mat-icon>payment</mat-icon>
                     Payments
                 </button>

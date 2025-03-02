@@ -13,16 +13,16 @@ import { AdminTemplateComponent } from './admin-template/admin-template.componen
 const routes: Routes = [
   {path : "", component : LoginComponent},
   {path : "login", component : LoginComponent},
-  {path : "admin", component : AdminTemplateComponent},
-
-  {path : "home", component : HomeComponent},
-  {path : "profile", component : ProfileComponent},
-  {path : "loadClients", component : LoadClientsComponent},
-  {path : "loadPayments", component : LoadPaymentsComponent},
-  {path : "dashboard", component : DashboardComponent},
-  {path : "clients", component : ClientsComponent},
-  {path : "payments", component : PaymentsComponent}
-
+  {path : "admin", component : AdminTemplateComponent,children :[
+    {path : "home", component : HomeComponent},
+    {path : "profile", component : ProfileComponent},
+    {path : "loadClients", component : LoadClientsComponent},
+    {path : "loadPayments", component : LoadPaymentsComponent},
+    {path : "dashboard", component : DashboardComponent},
+    {path : "clients", component : ClientsComponent},
+    {path : "payments", component : PaymentsComponent}  
+  ]},
+ 
 ];
 
 @NgModule({
