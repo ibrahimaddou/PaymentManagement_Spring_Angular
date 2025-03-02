@@ -8,10 +8,13 @@ import { PaymentsComponent } from './payments/payments.component';
 import { LoadPaymentsComponent } from './load-payments/load-payments.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientsComponent } from './clients/clients.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 const routes: Routes = [
   {path : "", component : LoginComponent},
   {path : "login", component : LoginComponent},
+  {path : "admin", component : AdminTemplateComponent},
+
   {path : "home", component : HomeComponent},
   {path : "profile", component : ProfileComponent},
   {path : "loadClients", component : LoadClientsComponent},
