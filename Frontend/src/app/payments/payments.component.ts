@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, viewChild, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 @Component({
@@ -14,6 +15,8 @@ export class PaymentsComponent implements OnInit {
    public displayedColumns : string[] = ['id','date','amount','type','status','firstname'];
    @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+   @ViewChild(MatSort)sort!: MatSort;
+
 
   constructor(private http : HttpClient){
     
@@ -25,6 +28,7 @@ export class PaymentsComponent implements OnInit {
         this.payments = data; //getting data
         this.dataSource = new MatTableDataSource(this.payments);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
 
       },
       error : err =>{
