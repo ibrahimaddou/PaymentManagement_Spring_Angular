@@ -39,7 +39,7 @@ public class PaymentManagementApplication {
 				for (int i = 0 ; i<2;i++){
 					int j =random.nextInt(paymentTypes.length);
 					Payment payment = Payment.builder()
-							.amount(100+(int)(Math.random()+2000))
+							.amount(100+(int)(Math.random()*2000))
 							.type(paymentTypes[j])
 							.status(paymentStatuses[j])
 							.date(LocalDate.now())
