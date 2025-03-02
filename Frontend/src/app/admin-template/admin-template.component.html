@@ -13,7 +13,10 @@
         <button mat-menu-item routerLink="/admin/loadClients">Load Clients</button>
         <button mat-menu-item routerLink="/admin/loadPayments">Load Payments</button>
     </mat-menu>
-    <button mat-raised-button color="accent" routerLink="/admin/login">
+    <button mat-button *ngIf="authService.isAuthentificated">
+        {{authService.username}}
+     </button>
+    <button mat-raised-button color="accent" (click)="logout()">
         Logout
     </button>
 
