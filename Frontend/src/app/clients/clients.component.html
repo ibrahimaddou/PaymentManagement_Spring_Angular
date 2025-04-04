@@ -2,12 +2,28 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>
-             Clients
+             Clients 
             </mat-card-title>
         </mat-card-header>
         <mat-divider></mat-divider>
         <mat-card-content>
-            Clients
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th> <th>First name</th> <th>Last name</th> <th>Code</th> <th>Program ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let client of clients">
+                    <td>{{client.id}}</td>
+                    <td>{{client.firstName}}</td>
+                    <td>{{client.lastName}}</td>
+                    <td>{{client.code}}</td>
+                    <td>{{client.programID}}</td>
+
+                </tr>
+            </tbody>
+        </table>
         </mat-card-content>
     </mat-card>
 </div>
